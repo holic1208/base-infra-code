@@ -5,7 +5,7 @@ data "terraform_remote_state" "vpc" {
     organization = "sangun-admin"
 
     workspaces = {
-      name = "base-infra_network_vpc"
+      name = "base-infra-code_network_vpc"
     }
   }
 }
@@ -17,7 +17,7 @@ data "terraform_remote_state" "sg" {
     organization = "sangun-admin"
 
     workspaces = {
-      name = "base-infra_network_sg"
+      name = "base-infra-code_network_sg"
     }
   }
 }
@@ -29,7 +29,7 @@ data "terraform_remote_state" "eks" {
     organization = "sangun-admin"
 
     workspaces = {
-      name = "k8s-infra_eks"
+      name = "k8s-infra-code_eks"
     }
   }
 }
