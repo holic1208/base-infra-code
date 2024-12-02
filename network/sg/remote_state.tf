@@ -1,11 +1,9 @@
 data "terraform_remote_state" "vpc" {
-  backend = "remote"
+  backend = "s3"
 
   config = {
-    organization = "sangun-admin"
-
-    workspaces = {
-      name = "base-infra-code_network_vpc"
-    }
+    bucket = "backend-base-infra-code"
+    key    = "network/vpc/terraform.tfstate"
+    region = "ap-northeast-2"
   }
 }
