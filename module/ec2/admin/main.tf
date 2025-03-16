@@ -19,6 +19,10 @@ resource "aws_instance" "adminhost" {
     http_tokens = "required"
   }
 
+  lifecycle {
+    ignore_changes = [ user_data, user_data_base64 ]
+  }
+  
   tags = {
     Name = format("${var.name}-%s-%s", "admin", "server")
   }
